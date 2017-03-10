@@ -32,7 +32,8 @@ System should be composed of 3 applications, which are individually specifed in 
 - EE features: EE7 
 - user interface: JSF (Facelets) 
 - database: not using localy 
-- listens on JMS message queues NWTiS_ {username} _1 and NWTiS_ {username} _2 download, stores and reviews JMS messages 
+- listens on JMS message queues NWTiS_ {username} _1 and NWTiS_ {username} _2 
+- download, stores and reviews JMS messages 
 - uses socket server {username} _aplikacija_1 to check and add an address and get associated meteorological data 
 - uses REST web service {user name} _app_2 to view active users, and their added addresses
 - uses SOAP web service {user name} _app_1 to get current weather data for the selected address
