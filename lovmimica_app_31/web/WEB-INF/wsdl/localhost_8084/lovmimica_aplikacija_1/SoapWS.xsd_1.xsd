@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6-1b01  svn-revision#13094. --><xs:schema xmlns:tns="http://ws.logika.lovmimica.nwtis.foi.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.logika.lovmimica.nwtis.foi.com/">
+
+<xs:element name="addressTestMethod" type="tns:addressTestMethod"/>
+
+<xs:element name="addressTestMethodResponse" type="tns:addressTestMethodResponse"/>
+
+<xs:element name="dajAdreseKorisnika" type="tns:dajAdreseKorisnika"/>
+
+<xs:element name="dajAdreseKorisnikaResponse" type="tns:dajAdreseKorisnikaResponse"/>
+
+<xs:element name="dajAdresineMeteoPodatke" type="tns:dajAdresineMeteoPodatke"/>
+
+<xs:element name="dajAdresineMeteoPodatkeResponse" type="tns:dajAdresineMeteoPodatkeResponse"/>
+
+<xs:element name="dajAdresineMeteoPodatkeUIntervalu" type="tns:dajAdresineMeteoPodatkeUIntervalu"/>
+
+<xs:element name="dajAdresineMeteoPodatkeUIntervaluResponse" type="tns:dajAdresineMeteoPodatkeUIntervaluResponse"/>
+
+<xs:element name="dajRangListuAdresa" type="tns:dajRangListuAdresa"/>
+
+<xs:element name="dajRangListuAdresaResponse" type="tns:dajRangListuAdresaResponse"/>
+
+<xs:element name="dajTekuceMeteoPodatke" type="tns:dajTekuceMeteoPodatke"/>
+
+<xs:element name="dajTekuceMeteoPodatkeResponse" type="tns:dajTekuceMeteoPodatkeResponse"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:element name="testMethod" type="tns:testMethod"/>
+
+<xs:element name="testMethodResponse" type="tns:testMethodResponse"/>
+
+<xs:complexType name="dajTekuceMeteoPodatke">
+<xs:sequence>
+<xs:element name="korisnik" type="xs:string" minOccurs="0"/>
+<xs:element name="lozinka" type="xs:string" minOccurs="0"/>
+<xs:element name="adresaId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dajTekuceMeteoPodatkeResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:meteoData" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="meteoData">
+<xs:sequence>
+<xs:element name="addressId" type="xs:int"/>
+<xs:element name="clouds" type="xs:float"/>
+<xs:element name="downloadTime" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="forecast" type="xs:boolean"/>
+<xs:element name="forecastTime" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="humidity" type="xs:float"/>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="pressure" type="xs:float"/>
+<xs:element name="temperature" type="xs:float"/>
+<xs:element name="updateTime" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="wind" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dajAdreseKorisnika">
+<xs:sequence>
+<xs:element name="korisnik" type="xs:string" minOccurs="0"/>
+<xs:element name="lozinka" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dajAdreseKorisnikaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:address" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="address">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="latitude" type="xs:string" minOccurs="0"/>
+<xs:element name="longitude" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="userId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addressTestMethod">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="addressTestMethodResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:address" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dajAdresineMeteoPodatke">
+<xs:sequence>
+<xs:element name="korisnik" type="xs:string" minOccurs="0"/>
+<xs:element name="lozinka" type="xs:string" minOccurs="0"/>
+<xs:element name="adresaId" type="xs:int"/>
+<xs:element name="n" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dajAdresineMeteoPodatkeResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:meteoData" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dajAdresineMeteoPodatkeUIntervalu">
+<xs:sequence>
+<xs:element name="korisnik" type="xs:string" minOccurs="0"/>
+<xs:element name="lozinka" type="xs:string" minOccurs="0"/>
+<xs:element name="adresaId" type="xs:int"/>
+<xs:element name="pocetak" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="kraj" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dajAdresineMeteoPodatkeUIntervaluResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:meteoData" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dajRangListuAdresa">
+<xs:sequence>
+<xs:element name="korisnik" type="xs:string" minOccurs="0"/>
+<xs:element name="lozinka" type="xs:string" minOccurs="0"/>
+<xs:element name="n" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dajRangListuAdresaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:addressFrequency" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addressFrequency">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="testMethod">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="testMethodResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

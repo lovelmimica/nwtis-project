@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="SoapWS" targetNamespace="http://ws.logika.lovmimica.nwtis.foi.com/" xmlns:tns="http://ws.logika.lovmimica.nwtis.foi.com/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:fi="http://java.sun.com/xml/ns/wsit/2006/09/policy/fastinfoset/service" xmlns:tcp="http://java.sun.com/xml/ns/wsit/2006/09/policy/soaptcp/service" 
+ >
+    <message name="getAddressMeteoData"/>
+    <message name="getAddressMeteoDataResponse"/>
+    <message name="getCurrentMeteoData"/>
+    <message name="getCurrentMeteoDataResponse"/>
+    <message name="getUsersAddresses"/>
+    <message name="getUsersAddressesResponse"/>
+    <message name="getAddressRankList"/>
+    <message name="getAddressRankListResponse"/>
+    <message name="getAddressMeteoData"/>
+    <message name="getAddressMeteoDataResponse"/>
+    <message name="getAddressIntervaledMeteoData"/>
+    <message name="getAddressIntervaledMeteoDataResponse"/>
+    <portType name="SoapWS">
+        <operation name="getAddressMeteoData">
+            <input message="tns:getAddressMeteoData"/>
+            <output message="tns:getAddressMeteoDataResponse"/>
+        </operation>
+        <operation name="getCurrentMeteoData">
+            <input message="tns:getCurrentMeteoData"/>
+            <output message="tns:getCurrentMeteoDataResponse"/>
+        </operation>
+        <operation name="getUsersAddresses">
+            <input message="tns:getUsersAddresses"/>
+            <output message="tns:getUsersAddressesResponse"/>
+        </operation>
+        <operation name="getAddressRankList">
+            <input message="tns:getAddressRankList"/>
+            <output message="tns:getAddressRankListResponse"/>
+        </operation>
+        <operation name="getAddressMeteoData">
+            <input message="tns:getAddressMeteoData"/>
+            <output message="tns:getAddressMeteoDataResponse"/>
+        </operation>
+        <operation name="getAddressIntervaledMeteoData">
+            <input message="tns:getAddressIntervaledMeteoData"/>
+            <output message="tns:getAddressIntervaledMeteoDataResponse"/>
+        </operation>
+    </portType>
+    <binding name="SoapWSPortBinding" type="tns:SoapWS">
+        <wsp:PolicyReference URI="#SoapWSPortBindingPolicy"/>
+        <operation name="getAddressMeteoData">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="getCurrentMeteoData">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="getUsersAddresses">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="getAddressRankList">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="getAddressMeteoData">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="getAddressIntervaledMeteoData">
+            <input/>
+            <output/>
+        </operation>
+    </binding>
+    <service name="SoapWS">
+        <port name="SoapWSPort" binding="tns:SoapWSPortBinding"/>
+    </service>
+    <wsp:Policy wsu:Id="SoapWSPortBindingPolicy">
+        <wsp:ExactlyOne>
+            <wsp:All/>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+</definitions>

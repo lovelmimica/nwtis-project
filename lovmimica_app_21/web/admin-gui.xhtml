@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>#{m.admin}</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:commandButton value="#{m.serverStatusManagement}" action="server-management.xhtml"/>
+            <h:commandButton value="#{m.registrationHandling}" action="registration-handling.xhtml"/>
+            <h:commandButton value="#{m.userQuotaUpdate}" action="update-user.xhtml"/>
+            <h:commandButton value="#{m.emailInbox}" action="email-archive.xhtml"/>
+            <h:commandButton value="#{m.appLog}" action="app-log.xhtml"/>
+        </h:form>
+        
+    </h:body>
+</html>
+

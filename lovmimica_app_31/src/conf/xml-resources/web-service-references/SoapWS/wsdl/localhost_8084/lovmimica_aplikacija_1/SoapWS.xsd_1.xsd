@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6-1b01  svn-revision#13094. --><xs:schema xmlns:tns="http://soap.ws.logika.lovmimica.nwtis.foi.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://soap.ws.logika.lovmimica.nwtis.foi.com/">
+
+<xs:element name="getAddressIntervaledMeteoData" type="tns:getAddressIntervaledMeteoData"/>
+
+<xs:element name="getAddressIntervaledMeteoDataResponse" type="tns:getAddressIntervaledMeteoDataResponse"/>
+
+<xs:element name="getAddressMeteoData" type="tns:getAddressMeteoData"/>
+
+<xs:element name="getAddressMeteoDataResponse" type="tns:getAddressMeteoDataResponse"/>
+
+<xs:element name="getAddressRankList" type="tns:getAddressRankList"/>
+
+<xs:element name="getAddressRankListResponse" type="tns:getAddressRankListResponse"/>
+
+<xs:element name="getAddressesMeteoData" type="tns:getAddressesMeteoData"/>
+
+<xs:element name="getAddressesMeteoDataResponse" type="tns:getAddressesMeteoDataResponse"/>
+
+<xs:element name="getCurrentMeteoData" type="tns:getCurrentMeteoData"/>
+
+<xs:element name="getCurrentMeteoDataResponse" type="tns:getCurrentMeteoDataResponse"/>
+
+<xs:element name="getUsersAddresses" type="tns:getUsersAddresses"/>
+
+<xs:element name="getUsersAddressesResponse" type="tns:getUsersAddressesResponse"/>
+
+<xs:complexType name="getAddressIntervaledMeteoData">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="addressId" type="xs:int"/>
+<xs:element name="start" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="end" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAddressIntervaledMeteoDataResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:meteoData" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="meteoData">
+<xs:sequence>
+<xs:element name="addressId" type="xs:int"/>
+<xs:element name="clouds" type="xs:float"/>
+<xs:element name="downloadTime" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="forecast" type="xs:boolean"/>
+<xs:element name="forecastTime" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="humidity" type="xs:float"/>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="pressure" type="xs:float"/>
+<xs:element name="temperature" type="xs:float"/>
+<xs:element name="updateTime" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="wind" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAddressRankList">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="n" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAddressRankListResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:addressFrequency" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addressFrequency">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getUsersAddresses">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUsersAddressesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:address" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="address">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="latitude" type="xs:string" minOccurs="0"/>
+<xs:element name="longitude" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="userId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAddressesMeteoData">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="addressId" type="xs:int"/>
+<xs:element name="n" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAddressesMeteoDataResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:meteoData" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAddressMeteoData">
+<xs:sequence>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="addressName" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAddressMeteoDataResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:meteoData" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCurrentMeteoData">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="adresaId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCurrentMeteoDataResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:meteoData" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

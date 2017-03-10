@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>NWTiS Aplikacija 31</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:commandButton value="Active users" action="#{wSRequesingBean.requestActiveUsers()}"/>
+            <h:commandButton value="Users addresses" action="#{wSRequesingBean.requestUsersAddresses()}"/>
+            <h:commandButton value="Address  current meteo data" action="address-meteo.xhtml"/>
+            <h:outputText value="#{wSRequesingBean.response}"/>
+        </h:form>
+        <h:dataTable var="msg" value="#{receivedJmsMsgsBean.findAllJms()}" border="1">
+            <h:column>
+                <f:facet name="header">Content</f:facet>
+                #{msg.message}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Delete </f:facet>
+                <h:form>
+                    <h:commandButton value="Delete" action="#{receivedJmsMsgsBean.deleteJms(msg)}"/>
+                </h:form>
+                
+            </h:column>
+        </h:dataTable> 
+    </h:body>
+</html>
+

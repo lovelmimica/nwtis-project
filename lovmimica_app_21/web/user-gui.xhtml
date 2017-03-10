@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>User command GUI</title>
+    </h:head>
+    <h:body>
+        
+        
+        #{m.user} #{activeUserBean.username}<br/>
+        #{m.password} #{activeUserBean.password}<br/>
+        <h:form>
+            #{m.address} <h:inputText value="#{userCommandBean.addressName}"/>
+            <h:commandButton value="#{m.ok}" action="#{userCommandBean.addAddress()}"/>
+            #{m.response} <h:outputText value="#{userCommandBean.reponse}"/><br/>
+        </h:form>
+        <h:form>
+            <h:selectOneRadio value="#{addressGeterBean.scope}">
+                <f:selectItem itemValue="all" itemLabel="#{m.all}"/>
+                <f:selectItem itemValue="users" itemLabel="#{m.user}"/>
+            </h:selectOneRadio>
+            <h:selectOneMenu value="#{meteoGeterBean.address}">
+                <f:selectItems value="#{addressGeterBean.requestAddresses()}"/>
+            </h:selectOneMenu><br/>
+            <h:selectOneRadio value="#{meteoGeterBean.type}">
+                <f:selectItem itemValue="weather" itemLabel="#{m.weather}"/>
+                <f:selectItem itemValue="forecast" itemLabel="#{m.forecast}"/>
+            </h:selectOneRadio>
+            <h:outputText value="#{meteoGeterBean.response}"/>
+            <h:dataTable id="tab1" var="md" value="#{meteoGeterBean.tabularData}" border="1">
+                <h:column>
+                    <f:facet name="header">#{m.temperature}</f:facet>
+                    #{md.temperature}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">#{m.wind}</f:facet>
+                    #{md.wind}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">#{m.humidity}</f:facet>
+                    #{md.humidity}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">#{m.pressure}</f:facet>
+                    #{md.pressure}
+                </h:column>
+            </h:dataTable>
+ 
+            <h:commandButton value="#{m.ok}" action="#{meteoGeterBean.requestAddressMeteo()}"/>
+        </h:form><br/>
+        
+        
+        
+    </h:body>
+</html>
+

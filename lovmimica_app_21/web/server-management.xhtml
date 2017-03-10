@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>#{m.serverStatusManagement}</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:commandButton value="#{m.pause}" action="#{app01StatusManagementBean.requestPause()}"/><br/>
+            <h:commandButton value="#{m.stop}" action="#{app01StatusManagementBean.requestStop()}"/><br/>
+            <h:commandButton value="#{m.start}" action="#{app01StatusManagementBean.requestStart()}"/><br/>
+            <h:commandButton value="#{m.status}" action="#{app01StatusManagementBean.requestGetStatus()}"/><br/>
+        
+            Response: <h:outputText value="#{app01StatusManagementBean.socketResponse}"/><br/>
+        </h:form>
+    </h:body>
+</html>
+

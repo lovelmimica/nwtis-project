@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8084/lovmimica_aplikacija_1/SoapWS?wsdl" uri="wsdl/localhost_8084/lovmimica_aplikacija_1/SoapWS.wsdl"/>
+    <system systemId="http://localhost:8084/lovmimica_aplikacija_1/SoapWS?xsd=1" uri="wsdl/localhost_8084/lovmimica_aplikacija_1/SoapWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/SoapWsTest/SoapWsTest?wsdl" uri="wsdl/localhost_8080/SoapWsTest/SoapWsTest.wsdl"/>
+    <system systemId="http://localhost:8080/SoapWsTest/SoapWsTest?xsd=1" uri="wsdl/localhost_8080/SoapWsTest/SoapWsTest.xsd_1.xsd"/>
+    <system systemId="http://localhost:8084/lovmimica_aplikacija_1/SoapWebService?wsdl" uri="wsdl/localhost_8084/lovmimica_aplikacija_1/SoapWebService.wsdl"/>
+    <system systemId="http://localhost:8084/lovmimica_aplikacija_1/SoapWebService?xsd=1" uri="wsdl/localhost_8084/lovmimica_aplikacija_1/SoapWebService.xsd_1.xsd"/>
+</catalog>
