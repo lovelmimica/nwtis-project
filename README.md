@@ -12,6 +12,7 @@ System should be composed of 3 applications, which are individually specifed in 
 - provides REST web service for prognostic weather data for selected address 
 - uses openweathermap.org REST web service to download weather data 
 - uses the Google Maps API REST web service to download relocation data for addresses 
+
 ###Application_02: 
 - web server: Glass fish EE features: EE7 
 - user interface: JSF (Faceless) with bilingual support
@@ -25,6 +26,7 @@ System should be composed of 3 applications, which are individually specifed in 
 - uses SOAP web service {username} _app_1 to get current weather data for selected addresses
 - uses REST web service {username} _aplikacija_1 get forecast weather data for the selected addresses 
 - provides a REST web service for active users and the added addresses 
+
 ###Application_03: 
 - web server: Glassfish 
 - EE features: EE7 
